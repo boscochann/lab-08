@@ -50,18 +50,20 @@ class WizardTest {
     @Test
     fun train_manaAtLeastFive()
     {
+        evilWizard.mana = 5
         evilWizard.train()
 
         assertEquals(11, evilWizard.spellPower)
-        assertEquals(25, evilWizard.mana)
+        assertEquals(0, evilWizard.mana)
     }
 
     @Test
     fun train_manaUnderFive()
     {
+        evilWizard.mana = 4
         evilWizard.train()
 
         assertEquals(10, evilWizard.spellPower)
-        assertEquals(30, evilWizard.mana)
+        assertEquals(4, evilWizard.mana)
     }
 }
